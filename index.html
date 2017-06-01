@@ -8,14 +8,20 @@
   <body ng-controller="mainCtrl">
     <div class="main-container">
       <h1> DevMountain Chat Room </h1>
+      <center><h3> By Garrett Chapman </h3></center>
+      <br>
       <form ng-submit="postMessage(message)">
-        <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
+        <input class="form-control text-box" type="text" ng-model="message" placeholder="Compose Message...">
       </form>
+      <br>
+      <br>
       <div class="messages-container">
-        <p ng-repeat="message in messages ">
-          {{message.message}} </p>
+        <p ng-repeat="message in messages   ">
+          {{message.message}}  <span class="date">{{message.createdAt |  date: "short" }}</span></p>
       </div>
     </div>
+
+
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="js/app.js"></script>
